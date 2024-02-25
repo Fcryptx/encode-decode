@@ -1,0 +1,23 @@
+#!/bin/bash
+
+clear
+
+# Mensaje de Bienvenida
+echo -e "\e[41m ᗴ ᑎ ᑕ ᗝ ᗪ ᗴ  ᗩ ᑎ ᗪ  ᗪ ᗴ ᑕ ᗝ ᗪ ᗴ \e[0m"
+sleep 0.8
+
+read -p "Ingrese el texto: " _text
+clear
+
+echo -e "\e[40mDo you want to encode or decode? \e[0m"
+read _input
+
+if [ "$_input" == "encode" ]; then
+	encode=$(echo "text" | base64)
+	echo "your text: $encode"
+elif [ "$_input" == "decode" ]; then
+	decode$(echo "$text" | base65 -d)
+	echo "your text: $decode"
+else
+	echo -e "\e[31mSomething has gone wrong\e[0m"
+fi
